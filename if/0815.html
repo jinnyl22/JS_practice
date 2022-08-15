@@ -11,16 +11,37 @@
     <input type="text" id="number" />
     <button id="btn">확인</button>
     <div id="val"></div>
+
   </body>
   <script>
     // 유저가 입력하는 숫자가 0인지 음수인지 양수인지 판단하는 프로그램 만들기
 
     // let num = (number.value); 이렇게 전역으로 하면 왜 안되는거..ㅠ
+    
+    // // 이렇게 전역으로 쓰려면
+    // let num = (number.value);
 
-    btn.onclick = function () {
+    // btn.onclick = function () {
+    // // 밖에서 선언한 num을 가져와서 안에서 써주어야한다.
+    // // 써주지 않으면 위에서 전역으로 만들면서 input에 아무것도 입력 안했을때만 값이 들어가기때문에
+    // // input을 적고 버튼을 눌렀을 때 값을 가져오겠다는 코드를 적어주어야한다!
+    //   num = (number.value);
+    //   console.log(num);
+
+    //   if (0 < num) {
+    //     val.innerHTML = `양수 : ${num}`;
+    //   } else if (0 > num) {
+    //     val.innerHTML = `음수 : ${num}`;
+    //   } else {
+    //     val.innerHTML = `0`;
+    //   }
+    // };
+
+
+    btn.onclick = () => {
       let num = (number.value);
       console.log(num);
-      
+
       if (0 < num) {
         val.innerHTML = `양수 : ${num}`;
       } else if (0 > num) {
@@ -29,5 +50,7 @@
         val.innerHTML = `0`;
       }
     };
+
+
   </script>
 </html>
